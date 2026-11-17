@@ -6,7 +6,7 @@
 .DS_Store
 Thumbs.db
 
-# Exports (le build web est versionné pour GitHub Pages)
+# Exports — le build web n'est PAS versionné dans main :
+# il est publié sur la branche gh-pages (worktree) pour GitHub Pages.
 /export/
-/build/*
-!/build/web/
+/build/
