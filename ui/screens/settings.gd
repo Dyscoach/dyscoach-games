@@ -1,9 +1,12 @@
 extends Control
+const AccessStyle := preload("res://ui/access_style.gd")
 ## Réglages d'accessibilité — fonctionnalité CŒUR (cahier des charges §5).
 ## Chaque réglage s'applique immédiatement (signal settings_changed) et
 ## se sauvegarde dans le profil actif.
 
 func _ready() -> void:
+	AccessStyle.apply(self)
+	Access.settings_changed.connect(func(): AccessStyle.apply(self))
 	%FontSizeSlider.value = int(Access.get_setting(Access.KEY_FONT_SIZE, 1))
 	%LetterSlider.value = float(Access.get_setting(Access.KEY_LETTER_SPACING, 1.0))
 	%LineSlider.value = float(Access.get_setting(Access.KEY_LINE_SPACING, 1.0))

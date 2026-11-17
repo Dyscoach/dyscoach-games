@@ -1,4 +1,5 @@
 extends Control
+const AccessStyle := preload("res://ui/access_style.gd")
 ## Tableau de bord adulte : suivi bienveillant, sans notes ni comparaison.
 ## Accès protégé par le coffre (code PIN local si défini).
 ##
@@ -11,6 +12,8 @@ var vault: RefCounted = null
 
 
 func _ready() -> void:
+	AccessStyle.apply(self)
+	Access.settings_changed.connect(func(): AccessStyle.apply(self))
 	vault = _load_vault()
 	if vault.has_pin() and not vault.is_unlocked():
 		%PinPanel.show()

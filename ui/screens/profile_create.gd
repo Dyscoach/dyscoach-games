@@ -1,4 +1,5 @@
 extends Control
+const AccessStyle := preload("res://ui/access_style.gd")
 ## Création de profil : prénom (optionnel), âge, choix des domaines
 ## (plusieurs possibles — aucune étiquette). Tout est local.
 
@@ -15,6 +16,8 @@ const DOMAIN_LABELS := {
 
 
 func _ready() -> void:
+	AccessStyle.apply(self)
+	Access.settings_changed.connect(func(): AccessStyle.apply(self))
 	var box: VBoxContainer = %DomainsBox
 	for domain in ExerciseDefinition.DOMAINS:
 		var cb := CheckBox.new()

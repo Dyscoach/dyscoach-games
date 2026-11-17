@@ -1,4 +1,5 @@
 extends Control
+const AccessStyle := preload("res://ui/access_style.gd")
 ## Carte des mondes : les univers de jeu et, pour chacun, ses exercices.
 ## Bouton « C'est parti ! » = session planifiée par le moteur adaptatif
 ## (révision due → compétence en cours → découverte).
@@ -7,6 +8,8 @@ const WorldMap := preload("res://core/world_map.gd")
 
 
 func _ready() -> void:
+	AccessStyle.apply(self)
+	Access.settings_changed.connect(func(): AccessStyle.apply(self))
 	var p := Progress.active_profile
 	%HelloLabel.text = "Salut %s ! 👋" % (p.display_name if p != null and not p.display_name.is_empty() else "toi")
 	var list: VBoxContainer = %WorldList
