@@ -61,6 +61,7 @@ func stop_session() -> void:
 
 func _on_session_finished(stats: Dictionary) -> void:
 	Progress.on_session_finished(stats)
+	Bridge.report_session(stats)
 	session_ended.emit(stats)
 	_cleanup()
 

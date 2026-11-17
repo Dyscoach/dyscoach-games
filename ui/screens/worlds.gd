@@ -10,6 +10,10 @@ const WorldMap := preload("res://core/world_map.gd")
 func _ready() -> void:
 	AccessStyle.apply(self)
 	Access.settings_changed.connect(func(): AccessStyle.apply(self))
+	# Profil envoyé par dyscoach.com (parent/praticien) : l'appliquer au moteur.
+	var remote: Dictionary = Bridge.poll_profile()
+	if not remote.is_empty():
+		Bridge.apply_remote_profile(remote)
 	var p := Progress.active_profile
 	%HelloLabel.text = "Salut %s ! 👋" % (p.display_name if p != null and not p.display_name.is_empty() else "toi")
 	var list: VBoxContainer = %WorldList

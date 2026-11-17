@@ -20,6 +20,7 @@ Content="*res://autoload/content_manager.gd"
 SR="*res://autoload/spaced_repetition_manager.gd"
 Progress="*res://autoload/progress_manager.gd"
 App="*res://autoload/app.gd"
+Bridge="*res://autoload/web_bridge.gd"
 
 [gui]
 
