@@ -21,6 +21,13 @@ SR="*res://autoload/spaced_repetition_manager.gd"
 Progress="*res://autoload/progress_manager.gd"
 App="*res://autoload/app.gd"
 
+[gui]
+
+; Netteté des polices (rendu Web + échelles fractionnaires d'iframe) :
+; MSDF = texte net à n'importe quelle échelle/zoom, hinting fort = bords accrochés aux pixels.
+theme/default_font_multichannel_signed_distance_field=true
+theme/default_font_hinting=2
+
 [display]
 
 window/size/viewport_width=1280
@@ -37,3 +44,6 @@ pointing/emulate_touch_from_mouse=true
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+; UI statique : accroche les transformations aux pixels entiers (bordures/lignes nettes
+; malgré l'échelle fractionnaire de l'iframe).
+2d/snap/snap_2d_transforms_to_pixel=true
