@@ -27,6 +27,8 @@ func _ready() -> void:
 		cb.toggled.connect(func(_on): AudioMgr.play_click())
 		cb.set_meta("domain", domain)
 		box.add_child(cb)
+	# Les cases viennent d'être créées : on (re)stylise toute la scène.
+	AccessStyle.apply(self)
 	%AgeSlider.value_changed.connect(func(_v): %AgeValue.text = "%d ans" % int(%AgeSlider.value))
 
 
