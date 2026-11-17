@@ -74,5 +74,5 @@ class SkillSnapshot:
 	var failures := 0
 	var last_level := 0
 	var last_day := -1.0
-	var exercise_ids: Array[String] = []
+	var exercise_ids: Array = []
 	var error_tags: Dictionary = {}   # tag -> occurrences
