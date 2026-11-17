@@ -6,6 +6,7 @@
 .DS_Store
 Thumbs.db
 
-# Exports
-/build/
+# Exports (le build web est versionné pour GitHub Pages)
 /export/
+/build/*
+!/build/web/
