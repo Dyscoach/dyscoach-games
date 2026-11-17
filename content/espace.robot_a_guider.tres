@@ -19,7 +19,7 @@ metadata = {
 "emoji": "🤖",
 "grid_w": 3,
 "grid_h": 3,
-"start": [0, 0],
+"start": [0, 2],
 "target": [0, 1],
 "target_emoji": "🎁"
 }
@@ -27,7 +27,7 @@ metadata = {
 script = ExtResource("2")
 item_id = "rg_2"
 prompt_text = "Avance de deux cases."
-answers = ["avant", "avant"]
+answers = ["avant/avant"]
 distractors = []
 hints = ["Deux cases : avance, puis avance encore.", "Compte bien : une… deux !"]
 feedback_correct = ["Deux cases d'un coup, super !"]
@@ -39,15 +39,15 @@ metadata = {
 "emoji": "🤖",
 "grid_w": 3,
 "grid_h": 3,
-"start": [0, 0],
-"target": [0, 2],
+"start": [0, 2],
+"target": [0, 0],
 "target_emoji": "🎁"
 }
 [sub_resource type="Resource" id="Item3"]
 script = ExtResource("2")
 item_id = "rg_3"
 prompt_text = "Tourne à droite, puis avance."
-answers = ["droite", "avant"]
+answers = ["droite/avant"]
 distractors = []
 hints = ["« À droite » : la main du côté des fenêtres (on te montre la flèche orange).", "D'abord tourner, ensuite avancer !"]
 feedback_correct = ["Droite puis tout droit : le robot te remercie !"]
@@ -59,7 +59,7 @@ metadata = {
 "emoji": "🤖",
 "grid_w": 3,
 "grid_h": 3,
-"start": [0, 0],
+"start": [0, 2],
 "target": [1, 1],
 "target_emoji": "🎁"
 }
@@ -67,7 +67,7 @@ metadata = {
 script = ExtResource("2")
 item_id = "rg_4"
 prompt_text = "Avance, tourne à gauche, avance."
-answers = ["avant", "gauche", "avant"]
+answers = ["avant/gauche/avant"]
 distractors = []
 hints = ["« À gauche » : la flèche violette de ce côté.", "Avance, tourne du côté violet, avance encore."]
 feedback_correct = ["Trois ordres réussis, quel pilote !"]
@@ -79,15 +79,15 @@ metadata = {
 "emoji": "🤖",
 "grid_w": 3,
 "grid_h": 3,
-"start": [1, 0],
-"target": [0, 2],
+"start": [2, 2],
+"target": [1, 0],
 "target_emoji": "🎁"
 }
 [sub_resource type="Resource" id="Item5"]
 script = ExtResource("2")
 item_id = "rg_5"
 prompt_text = "Avance, tourne à droite, avance, tourne à gauche, avance."
-answers = ["avant", "droite", "avant", "gauche", "avant"]
+answers = ["avant/droite/avant/gauche/avant"]
 distractors = []
 hints = ["Cinq ordres ! Répéte-les avec tes doigts avant d'appuyer.", "Suis les flèches colorées : haut, orange, haut, violette, haut."]
 feedback_correct = ["Cinq ordres sans te tromper : magnifique !"]
@@ -99,15 +99,15 @@ metadata = {
 "emoji": "🤖",
 "grid_w": 4,
 "grid_h": 4,
-"start": [0, 0],
-"target": [2, 3],
+"start": [0, 3],
+"target": [0, 0],
 "target_emoji": "🎁"
 }
 [sub_resource type="Resource" id="Item6"]
 script = ExtResource("2")
 item_id = "rg_6"
 prompt_text = "Avance deux fois, tourne à gauche, avance."
-answers = ["avant", "avant", "gauche", "avant"]
+answers = ["avant/avant/gauche/avant"]
 distractors = []
 hints = ["Un ordre à la fois : avance, avance, gauche, avance.", "Mime avec ton doigt sur l'écran avant d'appuyer."]
 feedback_correct = ["Parfait, le robot atteint le cadeau !"]
@@ -119,8 +119,8 @@ metadata = {
 "emoji": "🤖",
 "grid_w": 4,
 "grid_h": 4,
-"start": [1, 1],
-"target": [0, 3],
+"start": [3, 3],
+"target": [2, 0],
 "target_emoji": "🎁"
 }
 [resource]

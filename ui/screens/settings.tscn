@@ -1,0 +1,229 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://ui/screens/settings.gd" id="1"]
+
+[sub_resource type="ButtonGroup" id="bg1"]
+
+[node name="Settings" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.976471, 0.960784, 0.92549, 1)
+
+[node name="Root" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 20.0
+offset_right = -40.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Root"]
+theme_override_font_sizes/font_size = 38
+text = "⚙️ Réglages d'accessibilité"
+horizontal_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="Root"]
+size_flags_vertical = 3
+
+[node name="Box" type="VBoxContainer" parent="Root/Scroll"]
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Lecture" type="Label" parent="Root/Scroll/Box"]
+theme_override_font_sizes/font_size = 24
+text = "📖 Lecture"
+
+[node name="FontRow" type="HBoxContainer" parent="Root/Scroll/Box"]
+theme_override_constants/separation = 12
+
+[node name="FontLabel" type="Label" parent="Root/Scroll/Box/FontRow"]
+theme_override_font_sizes/font_size = 20
+text = "Police :"
+vertical_alignment = 1
+
+[node name="FontDefaut" type="CheckBox" parent="Root/Scroll/Box/FontRow"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 18
+text = "Défaut"
+button_group = SubResource("bg1")
+
+[node name="FontLisible" type="CheckBox" parent="Root/Scroll/Box/FontRow"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 18
+text = "Lisible"
+button_group = SubResource("bg1")
+
+[node name="FontDys" type="CheckBox" parent="Root/Scroll/Box/FontRow"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 18
+text = "Adaptée dys (confort)"
+button_group = SubResource("bg1")
+
+[node name="FontSizeRow" type="HBoxContainer" parent="Root/Scroll/Box"]
+theme_override_constants/separation = 12
+
+[node name="FontSizeLabel" type="Label" parent="Root/Scroll/Box/FontSizeRow"]
+theme_override_font_sizes/font_size = 20
+text = "Taille du texte :"
+vertical_alignment = 1
+
+[node name="FontSizeSlider" type="HSlider" parent="Root/Scroll/Box/FontSizeRow"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 3.0
+value = 1.0
+step = 1.0
+
+[node name="FontSizeValue" type="Label" parent="Root/Scroll/Box/FontSizeRow"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 20
+text = "Moyen"
+
+[node name="LetterRow" type="HBoxContainer" parent="Root/Scroll/Box"]
+theme_override_constants/separation = 12
+
+[node name="LetterLabel" type="Label" parent="Root/Scroll/Box/LetterRow"]
+theme_override_font_sizes/font_size = 20
+text = "Espacement lettres :"
+vertical_alignment = 1
+
+[node name="LetterSlider" type="HSlider" parent="Root/Scroll/Box/LetterRow"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 2.0
+value = 1.0
+step = 0.1
+
+[node name="LineRow" type="HBoxContainer" parent="Root/Scroll/Box"]
+theme_override_constants/separation = 12
+
+[node name="LineLabel" type="Label" parent="Root/Scroll/Box/LineRow"]
+theme_override_font_sizes/font_size = 20
+text = "Espacement lignes :"
+vertical_alignment = 1
+
+[node name="LineSlider" type="HSlider" parent="Root/Scroll/Box/LineRow"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 2.0
+value = 1.0
+step = 0.1
+
+[node name="Confort" type="Label" parent="Root/Scroll/Box"]
+theme_override_font_sizes/font_size = 24
+text = "🎨 Confort visuel"
+
+[node name="ContrastCheck" type="CheckBox" parent="Root/Scroll/Box"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 20
+text = "Contraste élevé"
+custom_minimum_size = Vector2(0, 52)
+
+[node name="PlainBgCheck" type="CheckBox" parent="Root/Scroll/Box"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 20
+text = "Fond uni, sans décor"
+custom_minimum_size = Vector2(0, 52)
+
+[node name="ReduceMotionCheck" type="CheckBox" parent="Root/Scroll/Box"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 20
+text = "Désactiver les animations"
+custom_minimum_size = Vector2(0, 52)
+
+[node name="ReduceEffectsCheck" type="CheckBox" parent="Root/Scroll/Box"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 20
+text = "Réduire les effets visuels"
+custom_minimum_size = Vector2(0, 52)
+
+[node name="Audio" type="Label" parent="Root/Scroll/Box"]
+theme_override_font_sizes/font_size = 24
+text = "🔊 Audio et consignes"
+
+[node name="SubtitlesCheck" type="CheckBox" parent="Root/Scroll/Box"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 20
+text = "Sous-titrer les consignes audio"
+custom_minimum_size = Vector2(0, 52)
+
+[node name="VolumeRow" type="HBoxContainer" parent="Root/Scroll/Box"]
+theme_override_constants/separation = 12
+
+[node name="VolumeLabel" type="Label" parent="Root/Scroll/Box/VolumeRow"]
+theme_override_font_sizes/font_size = 20
+text = "Volume :"
+vertical_alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="Root/Scroll/Box/VolumeRow"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 1.0
+value = 0.8
+
+[node name="VolumeValue" type="Label" parent="Root/Scroll/Box/VolumeRow"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 20
+text = "80 %"
+
+[node name="VoiceRateRow" type="HBoxContainer" parent="Root/Scroll/Box"]
+theme_override_constants/separation = 12
+
+[node name="VoiceRateLabel" type="Label" parent="Root/Scroll/Box/VoiceRateRow"]
+theme_override_font_sizes/font_size = 20
+text = "Vitesse des consignes :"
+vertical_alignment = 1
+
+[node name="VoiceRateSlider" type="HSlider" parent="Root/Scroll/Box/VoiceRateRow"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+min_value = 0.5
+max_value = 1.5
+value = 1.0
+step = 0.1
+
+[node name="VoiceRateValue" type="Label" parent="Root/Scroll/Box/VoiceRateRow"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 20
+text = "×1.0"
+
+[node name="Note" type="Label" parent="Root/Scroll/Box"]
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
+text = "La police « adaptée dys » est une préférence de confort de lecture. Elle ne soigne pas la dyslexie."
+horizontal_alignment = 1
+
+[node name="SaveButton" type="Button" parent="Root"]
+custom_minimum_size = Vector2(0, 84)
+text = "✅ Enregistrer"
+
+[connection signal="value_changed" from="Root/Scroll/Box/FontSizeRow/FontSizeSlider" to="." method="_on_font_size_changed"]
+[connection signal="value_changed" from="Root/Scroll/Box/LetterRow/LetterSlider" to="." method="_on_letter_changed"]
+[connection signal="value_changed" from="Root/Scroll/Box/LineRow/LineSlider" to="." method="_on_line_changed"]
+[connection signal="toggled" from="Root/Scroll/Box/ContrastCheck" to="." method="_on_contrast_toggled"]
+[connection signal="toggled" from="Root/Scroll/Box/PlainBgCheck" to="." method="_on_plain_bg_toggled"]
+[connection signal="toggled" from="Root/Scroll/Box/ReduceMotionCheck" to="." method="_on_reduce_motion_toggled"]
+[connection signal="toggled" from="Root/Scroll/Box/ReduceEffectsCheck" to="." method="_on_reduce_effects_toggled"]
+[connection signal="toggled" from="Root/Scroll/Box/SubtitlesCheck" to="." method="_on_subtitles_toggled"]
+[connection signal="value_changed" from="Root/Scroll/Box/VolumeRow/VolumeSlider" to="." method="_on_volume_changed"]
+[connection signal="value_changed" from="Root/Scroll/Box/VoiceRateRow/VoiceRateSlider" to="." method="_on_voice_rate_changed"]
+[connection signal="pressed" from="Root/SaveButton" to="." method="_on_save_pressed"]
