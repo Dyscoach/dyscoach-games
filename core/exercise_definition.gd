@@ -149,7 +149,7 @@ func validate() -> Array[String]:
 ## Tirage pédagogique : mélange puis sous-ensemble (jamais de contenu inventé).
 func pick_items(rng: RandomNumberGenerator, count: int) -> Array:
 	var pool: Array = items.duplicate()
-	rng.shuffle(pool)
+	pool.shuffle()
 	var n: int = mini(count, pool.size())
 	var picked: Array = []
 	for i in n:
