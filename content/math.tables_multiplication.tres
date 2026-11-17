@@ -1,0 +1,166 @@
+[gd_resource type="Resource" script_class="ExerciseDefinition" load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://core/exercise_definition.gd" id="1"]
+[ext_resource type="Script" path="res://core/exercise_item.gd" id="2"]
+
+[sub_resource type="Resource" id="Item1"]
+script = ExtResource("2")
+item_id = "tm_2x3"
+prompt_text = "2 × 3 = ?"
+answers = ["6"]
+distractors = ["5", "8", "23"]
+hints = ["2 × 3, c'est 3 + 3.", "Trois plus trois : compte sur tes doigts !"]
+feedback_correct = ["Bravo ! 3 + 3 = 6.", "Exact, tu maîtrises la table de 2."]
+feedback_error = ["Rappel : multiplier par 2, c'est ajouter le nombre à lui-même. 3 + 3 = 6."]
+segments = []
+difficulty_delta = -1
+tags = ["table_2"]
+metadata = {
+}
+
+[sub_resource type="Resource" id="Item2"]
+script = ExtResource("2")
+item_id = "tm_2x8"
+prompt_text = "2 × 8 = ?"
+answers = ["16"]
+distractors = ["10", "18", "64"]
+hints = ["2 × 8, c'est 8 + 8.", "Doubles : 8 + 8. Passe par 10 : 8 + 2 = 10, reste 6."]
+feedback_correct = ["Parfait ! Le double de 8, c'est 16."]
+feedback_error = ["Le double de 8 : 8 + 8 = 16. Astuce : 8 + 2 = 10, puis 10 + 6 = 16."]
+segments = []
+difficulty_delta = -1
+tags = ["table_2"]
+metadata = {
+}
+
+[sub_resource type="Resource" id="Item3"]
+script = ExtResource("2")
+item_id = "tm_5x4"
+prompt_text = "5 × 4 = ?"
+answers = ["20"]
+distractors = ["25", "9", "24"]
+hints = ["Les tables de 5 finissent toujours par 0 ou 5.", "5 × 4 : compte de 5 en 5 quatre fois : 5, 10, 15, 20."]
+feedback_correct = ["Bravo ! 20, finit par 0 comme tous les multiples pairs de 5."]
+feedback_error = ["Compte de 5 en 5 : 5, 10, 15, 20. Quatre sauts de 5 = 20."]
+segments = []
+difficulty_delta = 0
+tags = ["table_5"]
+metadata = {
+}
+
+[sub_resource type="Resource" id="Item4"]
+script = ExtResource("2")
+item_id = "tm_10x7"
+prompt_text = "10 × 7 = ?"
+answers = ["70"]
+distractors = ["17", "77", "107"]
+hints = ["Multiplier par 10 : ajoute un zéro à la fin.", "7 dizaines = 70."]
+feedback_correct = ["Excellent ! 7 dizaines, c'est 70."]
+feedback_error = ["Multiplier par 10 décale d'une dizaine : 7 → 70."]
+segments = []
+difficulty_delta = -1
+tags = ["table_10"]
+metadata = {
+}
+
+[sub_resource type="Resource" id="Item5"]
+script = ExtResource("2")
+item_id = "tm_3x6"
+prompt_text = "3 × 6 = ?"
+answers = ["18"]
+distractors = ["16", "63", "21"]
+hints = ["3 × 6 = 2 × 6 + 6. Le double de 6, c'est 12.", "12 + 6 = ?"]
+feedback_correct = ["Bravo ! 18, la table de 3 progresse bien."]
+feedback_error = ["Décompose : 2 × 6 = 12, puis 12 + 6 = 18."]
+segments = []
+difficulty_delta = 0
+tags = ["table_3"]
+metadata = {
+}
+
+[sub_resource type="Resource" id="Item6"]
+script = ExtResource("2")
+item_id = "tm_4x6"
+prompt_text = "4 × 6 = ?"
+answers = ["24"]
+distractors = ["22", "26", "46"]
+hints = ["4 × 6 = 2 × 6, encore 2 × 6. Le double de 12 !", "Double de 12 = 24."]
+feedback_correct = ["Super ! Doubler le double : 6 → 12 → 24."]
+feedback_error = ["Astuce du double-double : 2 × 6 = 12, puis 12 × 2 = 24."]
+segments = []
+difficulty_delta = 0
+tags = ["table_4"]
+metadata = {
+}
+
+[sub_resource type="Resource" id="Item7"]
+script = ExtResource("2")
+item_id = "tm_6x7"
+prompt_text = "6 × 7 = ?"
+answers = ["42"]
+distractors = ["36", "48", "67"]
+hints = ["6 × 7 = 5 × 7 + 7. 5 × 7 = 35.", "35 + 7 = ?"]
+feedback_correct = ["La célèbre 6 × 7 = 42, bien joué !"]
+feedback_error = ["Décompose : 5 × 7 = 35, puis 35 + 7 = 42."]
+segments = []
+difficulty_delta = 1
+tags = ["table_6", "table_7"]
+metadata = {
+}
+
+[sub_resource type="Resource" id="Item8"]
+script = ExtResource("2")
+item_id = "tm_7x8"
+prompt_text = "7 × 8 = ?"
+answers = ["56"]
+distractors = ["54", "63", "78"]
+hints = ["Astuce : 5, 6, 7, 8 → 56 = 7 × 8. Ou 7 × 8 = 7 × 4, double.", "7 × 4 = 28, double de 28 = 56."]
+feedback_correct = ["Magnifique ! 56, la plus redoutée des tables."]
+feedback_error = ["7 × 4 = 28, puis double : 56. Ou 7 × 8 = 50 + 6 ? Non : 7 × 8 = 56."]
+segments = []
+difficulty_delta = 1
+tags = ["table_7", "table_8"]
+metadata = {
+}
+
+[sub_resource type="Resource" id="Item9"]
+script = ExtResource("2")
+item_id = "tm_9x6"
+prompt_text = "9 × 6 = ?"
+answers = ["54"]
+distractors = ["51", "56", "64"]
+hints = ["Astuce du 9 : 10 × 6 = 60, moins un 6.", "60 − 6 = ?"]
+feedback_correct = ["Bravo ! L'astuce du 9 a payé : 54."]
+feedback_error = ["10 × 6 = 60, puis retire 6 : 60 − 6 = 54."]
+segments = []
+difficulty_delta = 1
+tags = ["table_9"]
+metadata = {
+}
+
+[resource]
+script = ExtResource("1")
+exercise_id = "math.tables_multiplication"
+display_name = "Le coffre des multiplications"
+description = "Calculer des multiplications simples avec des stratégies de décomposition (tables 2 à 9)."
+domain = "mathematiques"
+skill = "multiplication_division"
+prerequisites = ["addition_soustraction"]
+base_level = 3
+age_min = 8
+age_max = 12
+instruction_text = "Calcule la multiplication et touche la bonne réponse. Prends ton temps : les indices t'aident à décomposer."
+scene_path = "res://games/quiz_tap.tscn"
+artwork_note = "Coffre au trésor ; chaque bonne réponse ajoute une pièce."
+items = [SubResource("Item1"), SubResource("Item2"), SubResource("Item3"), SubResource("Item4"), SubResource("Item5"), SubResource("Item6"), SubResource("Item7"), SubResource("Item8"), SubResource("Item9")]
+interaction = "tap"
+duration_minutes = 5
+adaptive_params = {
+"failure_threshold_down": 0.34,
+"items_per_session": 6,
+"max_attempts_per_item": 3
+}
+source_note = "Récupération active + répétition espacée pour l'automatisme des tables ; stratégies de décomposition privilégiées (principe du cahier des charges : compréhension avant vitesse)."
+evidence_level = "etabli"
+validation_status = "brouillon"
+variant_of = ""

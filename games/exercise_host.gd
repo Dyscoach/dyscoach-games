@@ -10,6 +10,8 @@ const VIEW_SCENES := {
 	"lec.grapheme_phoneme": "res://games/grapheme_phoneme.tscn",
 	"lec.train_syllabes": "res://games/syllable_train.tscn",
 	"math.tresor_nombres": "res://games/treasure_numbers.tscn",
+	"math.tables_multiplication": "res://games/quiz_tap.tscn",
+	"orth.homophones": "res://games/quiz_tap.tscn",
 	"espace.robot_a_guider": "res://games/robot_guide.tscn",
 }
 

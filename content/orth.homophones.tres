@@ -1,0 +1,181 @@
+[gd_resource type="Resource" script_class="ExerciseDefinition" load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://core/exercise_definition.gd" id="1"]
+[ext_resource type="Script" path="res://core/exercise_item.gd" id="2"]
+
+[sub_resource type="Resource" id="Item1"]
+script = ExtResource("2")
+item_id = "hp_a_1"
+prompt_text = "Il ___ un beau château."
+answers = ["y a"]
+distractors = ["à"]
+hints = ["On peut dire « il existait un beau château » : c'est le verbe avoir.", "« Il y a » = « il existe ». « À » indique un lieu : « à la plage »."]
+feedback_correct = ["Bien vu ! « Il y a » comme « il existe »."]
+feedback_error = ["Astuce : remplace par « il existait ». « Il existait un château » fonctionne → « y a »."]
+segments = []
+difficulty_delta = -1
+tags = ["a_vs_a"]
+metadata = {
+}
+
+[sub_resource type="Resource" id="Item2"]
+script = ExtResource("2")
+item_id = "hp_a_2"
+prompt_text = "Nous allons ___ la piscine."
+answers = ["à"]
+distractors = ["a"]
+hints = ["« Nous allons a la piscine » ? Non : ici on indique le lieu.", "Vers quel endroit ? C'est une préposition : à."]
+feedback_correct = ["Exact ! « à » pour dire le lieu."]
+feedback_error = ["Quand on indique un lieu ou une direction, on écrit « à » avec accent."]
+segments = []
+difficulty_delta = -1
+tags = ["a_vs_a"]
+metadata = {
+}
+
+[sub_resource type="Resource" id="Item3"]
+script = ExtResource("2")
+item_id = "hp_est_1"
+prompt_text = "Le chat ___ endormi."
+answers = ["est"]
+distractors = ["et"]
+hints = ["Remplace par « était » : « Le chat était endormi » → c'est le verbe être.", "« et » relie deux mots (« un chat et un chien »), « est » est un verbe."]
+feedback_correct = ["Oui ! « est » = verbe être (on peut dire « était »)."]
+feedback_error = ["Astuce infaillible : remplace par « était ». Si ça marche, c'est « est »."]
+segments = []
+difficulty_delta = -1
+tags = ["et_vs_est"]
+metadata = {
+}
+
+[sub_resource type="Resource" id="Item4"]
+script = ExtResource("2")
+item_id = "hp_et_1"
+prompt_text = "J'aime les pommes ___ les poires."
+answers = ["et"]
+distractors = ["est"]
+hints = ["« J'aime les pommes est les poires » ? Bizarre ! Ici on fait une liste.", "« et » joint deux choses, comme dans « toi et moi »."]
+feedback_correct = ["Bravo ! « et » pour relier les mots d'une liste."]
+feedback_error = ["Pour relier deux mots (« pommes et poires »), on écrit « et » sans accent."]
+segments = []
+difficulty_delta = -1
+tags = ["et_vs_est"]
+metadata = {
+}
+
+[sub_resource type="Resource" id="Item5"]
+script = ExtResource("2")
+item_id = "hp_ont_1"
+prompt_text = "Les enfants ___ fini leurs devoirs."
+answers = ["ont"]
+distractors = ["on"]
+hints = ["« Les enfants avaient fini » → verbe avoir au pluriel.", "« on » = quelqu'un (« on va au parc ») ; « ont » = ils ont."]
+feedback_correct = ["Exact ! Les enfants « ont » (ils avaient)."]
+feedback_error = ["Remplace par « avaient » : si ça marche, c'est « ont » (ils avaient fini)."]
+segments = []
+difficulty_delta = 0
+tags = ["on_vs_ont"]
+metadata = {
+}
+
+[sub_resource type="Resource" id="Item6"]
+script = ExtResource("2")
+item_id = "hp_on_1"
+prompt_text = "___ va au parc cet après-midi."
+answers = ["On"]
+distractors = ["Ont"]
+hints = ["« Ont va au parc » ? Non : il n'y a pas de pluriel avant.", "« On » = les gens, quelqu'un. « Ont » suit toujours un pluriel (ils, les enfants…)."]
+feedback_correct = ["Parfait ! « On » = les gens, il va au singier... au singulier !"]
+feedback_error = ["Sans pluriel avant le verbe, c'est « on » : « On va au parc »."]
+segments = []
+difficulty_delta = 0
+tags = ["on_vs_ont"]
+metadata = {
+}
+
+[sub_resource type="Resource" id="Item7"]
+script = ExtResource("2")
+item_id = "hp_son_1"
+prompt_text = "Il prend ___ manteau."
+answers = ["son"]
+distractors = ["sont"]
+hints = ["« Il prend sont manteau » ? Bizarre ! C'est le sien.", "« son » = le sien (à lui). « sont » = ils étaient (verbe être au pluriel)."]
+feedback_correct = ["Bien joué ! « son manteau » = le manteau de lui."]
+feedback_error = ["« sont » = « étaient » : « Ils sont partis ». Pour le sien : « son manteau »."]
+segments = []
+difficulty_delta = 0
+tags = ["son_vs_sont"]
+metadata = {
+}
+
+[sub_resource type="Resource" id="Item8"]
+script = ExtResource("2")
+item_id = "hp_sont_1"
+prompt_text = "Les chiens ___ joueurs."
+answers = ["sont"]
+distractors = ["son"]
+hints = ["Remplace par « étaient » : « Les chiens étaient joueurs » → verbe être.", "« son » = le sien ; « sont » = étaient."]
+feedback_correct = ["Exact ! « sont » = ils étaient joueurs."]
+feedback_error = ["Si « étaient » fonctionne, c'est « sont » : « Les chiens sont joueurs »."]
+segments = []
+difficulty_delta = 0
+tags = ["son_vs_sont"]
+metadata = {
+}
+
+[sub_resource type="Resource" id="Item9"]
+script = ExtResource("2")
+item_id = "hp_ou_1"
+prompt_text = "___ es-tu ?"
+answers = ["Où"]
+distractors = ["ou"]
+hints = ["« Ou es-tu » ou « Où es-tu » ? La question demande un lieu !", "« où » avec accent = le lieu. « ou » sans accent = choix (« thé ou café »)."]
+feedback_correct = ["Oui ! « Où » avec accent pour demander un lieu."]
+feedback_error = ["Le lieu s'écrit avec accent : « Où es-tu ? ». Sans accent, « ou » = un choix."]
+segments = []
+difficulty_delta = 0
+tags = ["ou_vs_ou"]
+metadata = {
+}
+
+[sub_resource type="Resource" id="Item10"]
+script = ExtResource("2")
+item_id = "hp_ou_2"
+prompt_text = "Tu veux du thé ___ du chocolat ?"
+answers = ["ou"]
+distractors = ["où"]
+hints = ["Ici on propose un choix entre deux boissons.", "Choix = « ou » sans accent. Lieu = « où » avec accent."]
+feedback_correct = ["Bravo ! Un choix entre deux choses = « ou » sans accent."]
+feedback_error = ["Quand on choisit (« thé ou chocolat »), pas d'accent. L'accent, c'est pour le lieu !"]
+segments = []
+difficulty_delta = 0
+tags = ["ou_vs_ou"]
+metadata = {
+}
+
+[resource]
+script = ExtResource("1")
+exercise_id = "orth.homophones"
+display_name = "Les jumeaux des mots"
+description = "Distinguer les homophones fréquents (a/à, et/est, on/ont, son/sont, ou/où) avec des astuces de substitution."
+domain = "orthographe"
+skill = "homophones"
+prerequisites = []
+base_level = 3
+age_min = 8
+age_max = 12
+instruction_text = "Complète la phrase en touchant le bon mot. Les astuces t'aident : teste le remplacement suggéré."
+scene_path = "res://games/quiz_tap.tscn"
+artwork_note = "Deux mots jumeaux mais pas identiques ; gros boutons."
+items = [SubResource("Item1"), SubResource("Item2"), SubResource("Item3"), SubResource("Item4"), SubResource("Item5"), SubResource("Item6"), SubResource("Item7"), SubResource("Item8"), SubResource("Item9"), SubResource("Item10")]
+interaction = "tap"
+duration_minutes = 5
+adaptive_params = {
+"failure_threshold_down": 0.34,
+"items_per_session": 6,
+"max_attempts_per_item": 3
+}
+source_note = "Homophones grammaticaux : apprentissage par astuces de substitution (classe grammaticale plutôt que mémorisation brute) — pratique standard en orthopédagogie, à valider par un spécialiste."
+evidence_level = "prometteur"
+validation_status = "brouillon"
+variant_of = ""

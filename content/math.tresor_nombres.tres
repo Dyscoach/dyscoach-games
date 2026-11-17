@@ -7,8 +7,8 @@
 script = ExtResource("2")
 item_id = "tn_8_12"
 prompt_text = "8"
-answers = ["8"]
-distractors = ["12", "3", "21"]
+answers = ["12"]
+distractors = ["8", "3", "21"]
 hints = ["8 est plus PETIT que 12 : tu peux prendre 8 jetons mais pas 12.", "Compte jusqu'à 8 sur tes doigts : c'est plus court que jusqu'à 12 !"]
 feedback_correct = ["Bien vu ! 8 jetons, c'est moins que 12.", "Exact, 8 est plus petit que 12 !"]
 feedback_error = ["Compte les deux trésors : 8 et 12. 12 en a PLUS. Le plus petit, c'est 8 !"]
@@ -39,8 +39,8 @@ metadata = {
 script = ExtResource("2")
 item_id = "tn_23_32"
 prompt_text = "23"
-answers = ["23"]
-distractors = ["32", "28", "22"]
+answers = ["32"]
+distractors = ["23", "28", "22"]
 hints = ["23 et 32 ont les mêmes chiffres inversés ! Regarde les dizaines.", "23 = 2 dizaines. 32 = 3 dizaines. Qui a le plus de dizaines ?"]
 feedback_correct = ["Malin ! Tu as comparé les dizaines comme un chef.", "Exact : 2 dizaines (23), c'est moins que 3 (32)."]
 feedback_error = ["Attention aux chiffres jumeaux : 23, c'est 2 dizaines ; 32, c'est 3 dizaines. 3 dizaines, c'est plus !"]
@@ -131,6 +131,54 @@ metadata = {
 "emoji": "🌋",
 "max": 54
 }
+[sub_resource type="Resource" id="Item9"]
+script = ExtResource("2")
+item_id = "tn_350_305"
+prompt_text = "350"
+answers = ["350"]
+distractors = ["305", "335", "255"]
+hints = ["350 ou 305 ? Regarde la dizaine : 5 contre 0 !", "350 = 3 centaines 5 dizaines. 305 = 3 centaines 0 dizaine."]
+feedback_correct = ["Bien vu ! 5 dizaines contre 0 : 350 gagne."]
+feedback_error = ["350 a 5 dizaines, 305 en a 0 : c'est 350 le plus grand."]
+segments = []
+difficulty_delta = 1
+tags = ["comparaison", "zero_intercale"]
+metadata = {
+"emoji": "🧭"
+}
+
+[sub_resource type="Resource" id="Item10"]
+script = ExtResource("2")
+item_id = "tn_999_1000"
+prompt_text = "1000"
+answers = ["1000"]
+distractors = ["999", "991", "900"]
+hints = ["999 est le plus grand à 3 chiffres… mais 1000 a 4 chiffres !", "1000 = 10 centaines. 999 = 9 centaines et 9 dizaines et 9 unités."]
+feedback_correct = ["Excellent ! 1000 dépasse tous les nombres à 3 chiffres."]
+feedback_error = ["999 est énorme, mais 1000 = 10 centaines : c'est lui le plus grand."]
+segments = []
+difficulty_delta = 1
+tags = ["comparaison", "millier"]
+metadata = {
+"emoji": "🐉"
+}
+
+[sub_resource type="Resource" id="Item11"]
+script = ExtResource("2")
+item_id = "tn_450_540"
+prompt_text = "540"
+answers = ["540"]
+distractors = ["450", "445", "550"]
+hints = ["Chiffres inversés encore ! Compare les centaines : 4 ou 5 ?", "540 = 5 centaines ; 450 = 4 centaines."]
+feedback_correct = ["Parfait, 5 centaines contre 4 : 540 gagne."]
+feedback_error = ["540 = 5 centaines, 450 = 4 centaines : le plus grand est 540."]
+segments = []
+difficulty_delta = 1
+tags = ["comparaison", "inversion_chiffres"]
+metadata = {
+"emoji": "🛡️"
+}
+
 [resource]
 script = ExtResource("1")
 exercise_id = "math.tresor_nombres"
@@ -141,7 +189,7 @@ skill = "comparaison_quantites"
 prerequisites = ["denombrement"]
 base_level = 3
 age_min = 6
-age_max = 9
+age_max = 12
 instruction_text = "Touche le coffre qui contient le plus de trésors."
 scene_path = "res://games/treasure_numbers.tscn"
 artwork_note = "Deux coffres remplis de gemmes ; gros chiffres ; feedback doux."
