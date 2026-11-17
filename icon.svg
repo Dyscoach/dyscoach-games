@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Icône Dyscoach Jeux : D arrondi bienveillant + étincelle -->
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="#3752ed"/>
+  <path d="M38 30 h22 c22 0 36 15 36 34 s-14 34-36 34 H38 Z M52 44 v40 h8 c13 0 21-8 21-20 s-8-20-21-20 Z" fill="#ffffff"/>
+  <path d="M96 22 l3.5 8 8 3.5 -8 3.5 -3.5 8 -3.5-8 -8-3.5 8-3.5 Z" fill="#ffd166"/>
+  <circle cx="24" cy="100" r="5" fill="#ffd166"/>
+</svg>
