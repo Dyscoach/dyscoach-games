@@ -37,6 +37,17 @@ func _ready() -> void:
 	send_to_parent({"type": "dyscoach-ready", "catalog": Content.all().size()})
 
 
+## Polling continu : consomme le profil du parent dès qu'il arrive, où que soit
+## le moteur (accueil, monde, session). Applique le profil puis bascule sur la
+## carte des mondes si on était sur l'écran d'accueil local.
+func _process(_delta: float) -> void:
+	if _web_ok and not has_remote_profile:
+		var remote := poll_profile()
+		if not remote.is_empty():
+			apply_remote_profile(remote)
+			_go_to_worlds()
+
+
 ## Consomme le profil reçu du parent s'il y en a un (polling léger au démarrage).
 func poll_profile() -> Dictionary:
 	if not _web_ok or has_remote_profile:
@@ -141,6 +152,16 @@ func _on_progress_response(_result: int, code: int, _headers: PackedStringArray,
 			profile.sr.process_event(SrTypes.LearningEvent.new(skill_id, day, false, true, true, false))
 		else:
 			profile.sr.process_event(SrTypes.LearningEvent.new(skill_id, day, true, false, false, false))
+
+
+## Bascule vers la carte des mondes si on est sur l'écran d'accueil local
+## (l'enfant arrive avec son profil depuis dyscoach.com : pas de sélection locale).
+func _go_to_worlds() -> void:
+	var current := get_tree().current_scene
+	if current == null:
+		return
+	if current.scene_file_path == "res://ui/screens/home.tscn":
+		get_tree().change_scene_to_file("res://ui/screens/worlds.tscn")
 
 
 ## Envoie un message JSON à la page parente.
