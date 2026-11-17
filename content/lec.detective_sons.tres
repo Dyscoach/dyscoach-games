@@ -1,0 +1,160 @@
+[gd_resource type="Resource" script_class="ExerciseDefinition" load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://core/exercise_definition.gd" id="1"]
+[ext_resource type="Script" path="res://core/exercise_item.gd" id="2"]
+
+[sub_resource type="Resource" id="Item1"]
+script = ExtResource("2")
+item_id = "ds_chat"
+prompt_text = "chat"
+answers = ["oui"]
+distractors = []
+hints = ["Dis le mot très lentement : « chhaaaat ».", "Le son [a], tu l'entends dans « chat », comme dans « ballon »."]
+feedback_correct = ["Bravo, tu as de bonnes oreilles !", "Oui ! Le son [a] est bien dans « chat »."]
+feedback_error = ["Presque ! Écoute encore : chhaaaat. Tu entends [a] ?", "Le son [a] est là, on l'entend quand on ouvre grand la bouche."]
+segments = ["chat"]
+difficulty_delta = -1
+tags = ["son_a"]
+metadata = {
+"emoji": "🐱",
+"present": true,
+"sound": "a"
+}
+[sub_resource type="Resource" id="Item2"]
+script = ExtResource("2")
+item_id = "ds_ballon"
+prompt_text = "ballon"
+answers = ["oui"]
+hints = ["Allonge le mot : « baaaallon ».", "Le son [a] se cache au début du mot."]
+feedback_correct = ["Bien joué, tu l'as trouvé !"]
+feedback_error = ["On écoute ensemble : baaallon. Le [a] est au début !"]
+segments = ["bal", "lon"]
+difficulty_delta = -1
+tags = ["son_a"]
+metadata = {
+"emoji": "⚽",
+"present": true,
+"sound": "a"
+}
+[sub_resource type="Resource" id="Item3"]
+script = ExtResource("2")
+prompt_text = "vélo"
+item_id = "ds_velo"
+answers = ["non"]
+hints = ["Dis-le doucement : « vééélo ».", "Dans « vélo », on entend [é] et [o], mais pas [a]."]
+feedback_correct = ["Exact ! Pas de son [a] dans « vélo ».", "Super, tu ne t'es pas laissé piéger !"]
+feedback_error = ["Attention, [é] et [a] sont des cousins qui se ressemblent. Ici c'est [é] !"]
+segments = ["vé", "lo"]
+difficulty_delta = 0
+tags = ["son_a", "confusion_e_a"]
+metadata = {
+"emoji": "🚲",
+"present": false,
+"sound": "a"
+}
+[sub_resource type="Resource" id="Item4"]
+script = ExtResource("2")
+item_id = "ds_tomate"
+prompt_text = "tomate"
+answers = ["oui"]
+hints = ["Découpe le mot en syllabes : to-ma-te.", "Écoute la deuxième syllabe : maaa."]
+feedback_correct = ["Bravo, tu as bien découpé le mot !"]
+feedback_error = ["La deuxième syllabe est « ma ». Tu entends le [a] maintenant ?"]
+segments = ["to", "ma", "te"]
+difficulty_delta = 1
+tags = ["son_a"]
+metadata = {
+"emoji": "🍅",
+"present": true,
+"sound": "a"
+}
+[sub_resource type="Resource" id="Item5"]
+script = ExtResource("2")
+item_id = "ds_loup"
+prompt_text = "loup"
+answers = ["non"]
+hints = ["Fais grogner le mot : « lllouuup ».", "On entend [ou], pas [a]."]
+feedback_correct = ["Oui ! Rien à voir, le [a] n'est pas là."]
+feedback_error = ["Le son que tu entends est [ou], comme dans « loup ». [a] ? Non !"]
+segments = ["loup"]
+difficulty_delta = 0
+tags = ["son_a", "confusion_a_ou"]
+metadata = {
+"emoji": "🐺",
+"present": false,
+"sound": "a"
+}
+[sub_resource type="Resource" id="Item6"]
+script = ExtResource("2")
+item_id = "ds_banane"
+prompt_text = "banane"
+answers = ["oui"]
+hints = ["Compte les syllabes : ba-na-ne.", "Le [a] est dans chaque syllabe !"]
+feedback_correct = ["Très fort : tu as trouvé le son trois fois !"]
+feedback_error = ["Ba, na, ne : le [a] revient sans arrêt. On réécoute ?"]
+segments = ["ba", "na", "ne"]
+difficulty_delta = 1
+tags = ["son_a"]
+metadata = {
+"emoji": "🍌",
+"present": true,
+"sound": "a"
+}
+[sub_resource type="Resource" id="Item7"]
+script = ExtResource("2")
+item_id = "ds_domino"
+prompt_text = "domino"
+answers = ["non"]
+hints = ["Doucement : do-mi-no.", "On entend [o], [i], [o]… mais pas [a]."]
+feedback_correct = ["Parfait, le [a] n'est pas dans ce mot !"]
+feedback_error = ["Le son au début est [o], pas [a]. Ils se ressemblent un peu, non ?"]
+segments = ["do", "mi", "no"]
+difficulty_delta = 1
+tags = ["son_a", "confusion_a_o"]
+metadata = {
+"emoji": "🁣",
+"present": false,
+"sound": "a"
+}
+[sub_resource type="Resource" id="Item8"]
+script = ExtResource("2")
+item_id = "ds_cheval"
+prompt_text = "cheval"
+answers = ["oui"]
+hints = ["Che-val : écoute la fin du mot.", "Dans « val », on entend aaa."]
+feedback_correct = ["Bravo, tu as trouvé jusqu'au milieu du mot !"]
+feedback_error = ["La fin du mot dit « val » : v-aaa-l. Tu l'entends ?"]
+segments = ["che", "val"]
+difficulty_delta = 1
+tags = ["son_a", "position_fin"]
+metadata = {
+"emoji": "🐴",
+"present": true,
+"sound": "a"
+}
+[resource]
+script = ExtResource("1")
+exercise_id = "lec.detective_sons"
+display_name = "Le détective des sons"
+description = "Repérer si un son est présent dans un mot (conscience phonologique)."
+domain = "langage_ecrit"
+skill = "reconnaissance_sons"
+prerequisites = []
+base_level = 2
+age_min = 5
+age_max = 7
+instruction_text = "Écoute bien le mot. Appuie sur OUI si tu entends le son [a], sur NON sinon."
+scene_path = "res://games/detective_sons.tscn"
+artwork_note = "Loupe de détective, cartes-mots, boutons OUI/NON verts et rouges avec icônes ✓ et ✗."
+items = [SubResource("Item1"), SubResource("Item2"), SubResource("Item3"), SubResource("Item4"), SubResource("Item5"), SubResource("Item6"), SubResource("Item7"), SubResource("Item8")]
+interaction = "listen"
+duration_minutes = 4
+adaptive_params = {
+"failure_threshold_down": 0.34,
+"items_per_session": 6,
+"max_attempts_per_item": 2
+}
+source_note = "La conscience phonologique est un prédicteur robuste de la lecture (rapport INSERM « Dyslexie » 2007 ; enseignement explicite et systématique du code : NRP 2000)."
+evidence_level = "etabli"
+validation_status = "brouillon"
+variant_of = ""

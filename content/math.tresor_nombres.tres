@@ -1,0 +1,159 @@
+[gd_resource type="Resource" script_class="ExerciseDefinition" load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://core/exercise_definition.gd" id="1"]
+[ext_resource type="Script" path="res://core/exercise_item.gd" id="2"]
+
+[sub_resource type="Resource" id="Item1"]
+script = ExtResource("2")
+item_id = "tn_8_12"
+prompt_text = "8"
+answers = ["8"]
+distractors = ["12", "3", "21"]
+hints = ["8 est plus PETIT que 12 : tu peux prendre 8 jetons mais pas 12.", "Compte jusqu'à 8 sur tes doigts : c'est plus court que jusqu'à 12 !"]
+feedback_correct = ["Bien vu ! 8 jetons, c'est moins que 12.", "Exact, 8 est plus petit que 12 !"]
+feedback_error = ["Compte les deux trésors : 8 et 12. 12 en a PLUS. Le plus petit, c'est 8 !"]
+segments = []
+difficulty_delta = -1
+tags = ["comparaison", "nombres_connus"]
+metadata = {
+"emoji": "💎",
+"max": 12
+}
+[sub_resource type="Resource" id="Item2"]
+script = ExtResource("2")
+item_id = "tn_15_9"
+prompt_text = "15"
+answers = ["15"]
+distractors = ["9", "5", "19"]
+hints = ["15 est plus GRAND que 9.", "Quand tu comptes, tu arrives à 9 AVANT 15 : donc 15 est plus grand."]
+feedback_correct = ["Oui ! 15 pierres précieuses, c'est plus que 9.", "Bravo, 15 est bien plus grand que 9 !"]
+feedback_error = ["On compte ensemble : 9… 10, 11, 12, 13, 14, 15 ! 15 arrive après, donc 15 est PLUS GRAND."]
+segments = []
+difficulty_delta = -1
+tags = ["comparaison"]
+metadata = {
+"emoji": "💰",
+"max": 15
+}
+[sub_resource type="Resource" id="Item3"]
+script = ExtResource("2")
+item_id = "tn_23_32"
+prompt_text = "23"
+answers = ["23"]
+distractors = ["32", "28", "22"]
+hints = ["23 et 32 ont les mêmes chiffres inversés ! Regarde les dizaines.", "23 = 2 dizaines. 32 = 3 dizaines. Qui a le plus de dizaines ?"]
+feedback_correct = ["Malin ! Tu as comparé les dizaines comme un chef.", "Exact : 2 dizaines (23), c'est moins que 3 (32)."]
+feedback_error = ["Attention aux chiffres jumeaux : 23, c'est 2 dizaines ; 32, c'est 3 dizaines. 3 dizaines, c'est plus !"]
+segments = []
+difficulty_delta = 0
+tags = ["comparaison", "inversion_chiffres"]
+metadata = {
+"emoji": "👑",
+"max": 32
+}
+[sub_resource type="Resource" id="Item4"]
+script = ExtResource("2")
+item_id = "tn_47_51"
+prompt_text = "51"
+answers = ["51"]
+distractors = ["47", "45", "57"]
+hints = ["Regarde les dizaines : 4 ou 5 ?", "51 = 5 dizaines, 47 = 4 dizaines. 5 dizaines, c'est plus !"]
+feedback_correct = ["Bravo ! 5 dizaines gagnent sur 4.", "Exact, 51 est plus grand que 47."]
+feedback_error = ["Compare les dizaines : 51 en a 5, 47 en a 4. Le plus grand trésor, c'est 51 !"]
+segments = []
+difficulty_delta = 0
+tags = ["comparaison", "dizaines"]
+metadata = {
+"emoji": "💍",
+"max": 51
+}
+[sub_resource type="Resource" id="Item5"]
+script = ExtResource("2")
+item_id = "tn_68_86"
+prompt_text = "86"
+answers = ["86"]
+distractors = ["68", "78", "89"]
+hints = ["68 ou 86 ? Regarde le premier chiffre : les dizaines !", "86 a 8 dizaines, 68 en a 6. Qui pèse le plus ?"]
+feedback_correct = ["Super ! 8 dizaines contre 6 : 86 gagne.", "Bien joué, tu as comparé les dizaines !"]
+feedback_error = ["8 dizaines (86) contre 6 (68) : c'est 86 le plus grand. On recompte ?"]
+segments = []
+difficulty_delta = 1
+tags = ["comparaison", "inversion_chiffres"]
+metadata = {
+"emoji": "🏆",
+"max": 86
+}
+[sub_resource type="Resource" id="Item6"]
+script = ExtResource("2")
+item_id = "tn_100_89"
+prompt_text = "100"
+answers = ["100"]
+distractors = ["89", "90", "99"]
+hints = ["100, c'est 10 paquets de 10 !", "89 n'a que 8 paquets de 10. Qui en a le plus ?"]
+feedback_correct = ["Formidable ! 100, c'est vraiment beaucoup.", "Oui, 100 est plus grand que 89 !"]
+feedback_error = ["100 = 10 dizaines, 89 = 8 dizaines. 100 est le plus grand trésor !"]
+segments = []
+difficulty_delta = 1
+tags = ["comparaison", "centaine"]
+metadata = {
+"emoji": "🏰",
+"max": 100
+}
+[sub_resource type="Resource" id="Item7"]
+script = ExtResource("2")
+item_id = "tn_76_67"
+prompt_text = "76"
+answers = ["76"]
+distractors = ["67", "77", "66"]
+hints = ["Encore des chiffres jumeaux ! 76 : combien de dizaines ?", "7 dizaines (76) contre 6 (67)."]
+feedback_correct = ["Bravo, tu es un as des dizaines !", "Exact : 76 est plus grand que 67."]
+feedback_error = ["76 = 7 dizaines, 67 = 6 dizaines. 76 est le plus grand !"]
+segments = []
+difficulty_delta = 1
+tags = ["comparaison", "inversion_chiffres"]
+metadata = {
+"emoji": "⛏️",
+"max": 76
+}
+[sub_resource type="Resource" id="Item8"]
+script = ExtResource("2")
+item_id = "tn_54_45"
+prompt_text = "54"
+answers = ["54"]
+distractors = ["45", "55", "44"]
+hints = ["54 ou 45 ? Le premier chiffre décide.", "5 dizaines (54) contre 4 dizaines (45)."]
+feedback_correct = ["Oui ! 54 est plus grand que 45.", "Super, encore une paire piégeuse réussie !"]
+feedback_error = ["5 dizaines pour 54, 4 pour 45 : le plus grand est 54 !"]
+segments = []
+difficulty_delta = 0
+tags = ["comparaison", "inversion_chiffres"]
+metadata = {
+"emoji": "🌋",
+"max": 54
+}
+[resource]
+script = ExtResource("1")
+exercise_id = "math.tresor_nombres"
+display_name = "Le trésor des nombres"
+description = "Comparer des quantités et des nombres : qui a le plus grand trésor ?"
+domain = "mathematiques"
+skill = "comparaison_quantites"
+prerequisites = ["denombrement"]
+base_level = 3
+age_min = 6
+age_max = 9
+instruction_text = "Touche le coffre qui contient le plus de trésors."
+scene_path = "res://games/treasure_numbers.tscn"
+artwork_note = "Deux coffres remplis de gemmes ; gros chiffres ; feedback doux."
+items = [SubResource("Item1"), SubResource("Item2"), SubResource("Item3"), SubResource("Item4"), SubResource("Item5"), SubResource("Item6"), SubResource("Item7"), SubResource("Item8")]
+interaction = "tap"
+duration_minutes = 4
+adaptive_params = {
+"failure_threshold_down": 0.34,
+"items_per_session": 6,
+"max_attempts_per_item": 2
+}
+source_note = "Comparaison de quantités et valeur positionnelle des chiffres (inversions 23/32 typiques, cf. travaux sur la dyscalculie, Dehaene 2010 ; chemin du nombre)."
+evidence_level = "etabli"
+validation_status = "brouillon"
+variant_of = ""
