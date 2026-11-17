@@ -9,6 +9,7 @@ const SUITES: Array[String] = [
 	"adaptive_engine",
 	"spaced_repetition",
 	"session_runner",
+	"session_planner",
 	"content_catalog",
 	"progress",
 ]
