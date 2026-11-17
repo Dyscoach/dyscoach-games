@@ -9,6 +9,8 @@ extends Node
 signal profile_received(profile: Dictionary)
 signal session_report(stats: Dictionary)
 
+const SrTypes := preload("res://core/sr_types.gd")
+
 var _web_ok := false
 var has_remote_profile := false
 var _profile: Dictionary = {}
@@ -76,6 +78,69 @@ func apply_remote_profile(profile: Dictionary) -> void:
 		for d in domains:
 			Progress.active_profile.selected_domains.append(str(d))
 		Progress.save_profile(Progress.active_profile)
+	_progress_url = str(profile.get("progressUrl", ""))
+	# Rejoue la progression serveur si disponible (asynchrone, non bloquant).
+	if not _progress_url.is_empty():
+		_fetch_progress(_progress_url)
+
+
+var _progress_url := ""
+
+
+## Récupère la progression serveur (URL fournie par le parent) et la rejoue
+## dans le moteur : révisions espacées, niveaux adaptatifs et registre de
+## compétences retrouvent leur état à l'identique.
+## Le navigateur envoie les cookies de session dyscoach.com (fetch same-origin
+## en prod ; le parent fournit l'URL absolue incluant childId en dev).
+func _fetch_progress(url: String) -> void:
+	var http := HTTPRequest.new()
+	add_child(http)
+	http.request_completed.connect(_on_progress_response.bind(http))
+	var err := http.request(url, PackedStringArray(), HTTPClient.METHOD_GET)
+	if err != OK:
+		push_warning("godot-progress fetch impossible : %d" % err)
+
+
+func _on_progress_response(_result: int, code: int, _headers: PackedStringArray, body: PackedByteArray, http: HTTPRequest) -> void:
+	if http != null:
+		http.queue_free()
+	if code != 200:
+		push_warning("godot-progress HTTP %d" % code)
+		return
+	var parsed = JSON.parse_string(body.get_string_from_utf8())
+	if parsed == null or not (parsed is Dictionary) or parsed.get("status", "") != "success":
+		return
+	var sessions: Array = parsed.get("sessions", [])
+	if sessions.is_empty():
+		return
+	var profile = Progress.active_profile
+	if profile == null:
+		return
+	# Rejoue les sessions dans l'ordre chronologique.
+	for s in sessions:
+		var day := float(s.get("day", 0.0))
+		var skill_id := str(s.get("skill", ""))
+		var stats := {
+			"skill": skill_id,
+			"exercise_id": str(s.get("exerciseId", "")),
+			"items": int(s.get("items", 0)),
+			"auto_successes": int(s.get("auto", 0)),
+			"hint_solves": int(s.get("hints", 0)),
+			"failures": int(s.get("failures", 0)),
+			"level": profile.store.get_level(skill_id, 3),
+			"day": day,
+		}
+		profile.ledger.apply_session(stats)
+		if skill_id.is_empty():
+			continue
+		var auto := int(stats["auto_successes"])
+		var hint := int(stats["hint_solves"])
+		if int(stats["failures"]) > 0 and auto == 0 and hint == 0:
+			profile.sr.process_event(SrTypes.LearningEvent.new(skill_id, day, false, false, false, true))
+		elif hint > 0 and auto == 0:
+			profile.sr.process_event(SrTypes.LearningEvent.new(skill_id, day, false, true, true, false))
+		else:
+			profile.sr.process_event(SrTypes.LearningEvent.new(skill_id, day, true, false, false, false))
 
 
 ## Envoie un message JSON à la page parente.

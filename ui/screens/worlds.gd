@@ -14,6 +14,8 @@ func _ready() -> void:
 	var remote: Dictionary = Bridge.poll_profile()
 	if not remote.is_empty():
 		Bridge.apply_remote_profile(remote)
+	# Si le parent re-envoie le profil (dyscoach-ready tardif), rafraîchir.
+	Bridge.profile_received.connect(func(_profile): _refresh_profile())
 	var p := Progress.active_profile
 	%HelloLabel.text = "Salut %s ! 👋" % (p.display_name if p != null and not p.display_name.is_empty() else "toi")
 	var list: VBoxContainer = %WorldList
@@ -70,3 +72,13 @@ func _on_back_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	get_tree().change_scene_to_file("res://ui/screens/settings.tscn")
+
+
+## Rafraîchit l'accueil si le profil distant arrive après l'affichage.
+func _refresh_profile() -> void:
+	var p := Progress.active_profile
+	%HelloLabel.text = "Salut %s ! 👋" % (p.display_name if p != null and not p.display_name.is_empty() else "toi")
+	for child in %WorldList.get_children():
+		child.queue_free()
+	for w in WorldMap.worlds():
+		%WorldList.add_child(_world_card(w))
