@@ -10,16 +10,16 @@ extends Resource
 @export var prompt_image: String         ## Chemin ressource d'une image (optionnel).
 @export_multiline var instruction_override := ""  ## Consigne spécifique à l'item (sinon celle de la fiche).
 
-@export var answers: Array[String] = []        ## Réponses acceptées (première = référence).
-@export var distractors: Array[String] = []    ## Leurres proposés (choix multiples).
-@export var hints: Array[String] = []          ## Indices PROGRESSIFS (du plus léger au plus fort).
-@export var feedback_correct: Array[String] = []  ## Valorisation de la démarche.
-@export var feedback_error: Array[String] = []    ## Explication sans culpabilisation.
+@export var answers: Array = []        ## Réponses acceptées (première = référence).
+@export var distractors: Array = []    ## Leurres proposés (choix multiples).
+@export var hints: Array = []          ## Indices PROGRESSIFS (du plus léger au plus fort).
+@export var feedback_correct: Array = []  ## Valorisation de la démarche.
+@export var feedback_error: Array = []    ## Explication sans culpabilisation.
 
 ## Découpage pédagogique piloté par la fiche (syllabes, phonèmes, étapes…).
-@export var segments: Array[String] = []
+@export var segments: Array = []
 @export var difficulty_delta := 0          ## -1..+1 : décalage au sein du niveau de la fiche.
-@export var tags: Array[String] = []       ## Ex. "voyelle_longue", "graphie_an", "dizaines".
+@export var tags: Array = []       ## Ex. "voyelle_longue", "graphie_an", "dizaines".
 @export var metadata: Dictionary = {}      ## Extension contrôlée (données additionnelles des jeux).
 
 
@@ -82,11 +82,11 @@ func validate() -> Array[String]:
 
 ## Réponse de référence (celle qu'on montre si l'enfant est en difficulté).
 func reference_answer() -> String:
-	return answers[0] if not answers.is_empty() else ""
+	return String(answers[0]) if not answers.is_empty() else ""
 
 
 ## Indice n° `attempt` (0 = premier) ; au-delà, renvoie le dernier.
 func hint_for(attempt: int) -> String:
 	if hints.is_empty():
 		return ""
-	return hints[clampi(attempt, 0, hints.size() - 1)]
+	return String(hints[clampi(attempt, 0, hints.size() - 1)])

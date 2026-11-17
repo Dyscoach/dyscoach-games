@@ -12,6 +12,15 @@ run/main_scene="res://ui/screens/home.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Access="*res://autoload/accessibility.gd"
+AudioMgr="*res://autoload/audio_manager.gd"
+Content="*res://autoload/content_manager.gd"
+SR="*res://autoload/spaced_repetition_manager.gd"
+Progress="*res://autoload/progress_manager.gd"
+App="*res://autoload/app.gd"
+
 [display]
 
 window/size/viewport_width=1280
