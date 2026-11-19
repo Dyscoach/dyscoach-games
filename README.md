@@ -1,5 +1,13 @@
 # Dyscoach Jeux — moteur de jeux éducatifs (Godot 4.7)
 
+> ⚠️ **DÉPRÉCIÉ — remplacé par `dyscoach_games` (dépôt séparé).**
+> Depuis le 18/11/2026, la page Jouer de dyscoach.com sert le NOUVEAU moteur
+> sans état piloté par JSON (protocole DPP v1, `dyscoach.github.io/dyscoach_games`).
+> Ce dépôt n'est plus déployé ; il reste en ligne pour l'historique et pour un
+> rollback d'urgence (bascule `GAMES_ORIGIN` dans `src/app.ts` de dyscoach).
+> Sauvegarde disque : `profiles/dyscoach/cache/scratch/dyscoach-games-archive-2026-11-18.tar.gz` (SHA256 9f0d94d1301ce7eb…).
+> Le pont de progression `GET/POST /api/play/godot-progress` reste compatible des deux moteurs.
+
 Bibliothèque modulaire de jeux éducatifs courts pour enfants présentant des
 troubles DYS. **Outil d'accompagnement pédagogique** : cette application n'est
 ni un outil de diagnostic, ni un traitement.
